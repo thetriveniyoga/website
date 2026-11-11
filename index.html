@@ -1,0 +1,205 @@
+---
+layout: default
+title: Triveni Yoga — Daily Life Philosophy
+---
+
+<!-- Hero Section -->
+<section class="relative py-20 md:py-28 px-6 border-b border-stone-200/60 overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center">
+        <!-- Minimal Secular 3-Stream Wave SVG -->
+        <div class="w-16 h-16 mx-auto mb-8 text-amber-800">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M12 44 C 22 44, 24 20, 32 20 C 40 20, 42 44, 52 44" />
+                <path d="M12 34 C 22 34, 26 20, 32 20 C 38 20, 42 34, 52 34" opacity="0.65" />
+                <path d="M12 24 C 22 24, 28 20, 32 20 C 36 20, 42 24, 52 24" opacity="0.35" />
+            </svg>
+        </div>
+
+        <span class="text-xs uppercase tracking-[0.2em] text-amber-800 font-semibold block mb-4">
+            Action &bull; Presence &bull; Clarity
+        </span>
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-stone-900 tracking-tight mb-6 leading-tight">
+            Where three streams meet in everyday life.
+        </h1>
+        <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed mb-10">
+            Not a physical exercise routine—a practical architecture for living. Exploring how Karma, Bhakti, and Jnana
+            merge into better habits, mindful nutrition, and intentional work.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+            <a href="#journal"
+                class="px-6 py-3 bg-stone-900 text-stone-50 text-sm font-medium rounded-full hover:bg-amber-800 transition-colors">
+                Read the Journal
+            </a>
+            <a href="#streams"
+                class="px-6 py-3 bg-stone-200/70 text-stone-800 text-sm font-medium rounded-full hover:bg-stone-200 transition-colors">
+                Explore the Framework
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section id="philosophy" class="py-20 px-6 bg-white border-b border-stone-200/60">
+    <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-serif text-3xl font-bold text-stone-900 mb-6">The Triveni Confluence</h2>
+        <p class="text-stone-600 leading-relaxed text-lg mb-6">
+            <em>Triveni</em> refers to the confluence of three rivers. In daily life, a balanced human experience
+            requires integrating three distinct modes of operating: how we <strong>act</strong> in the world, how we
+            <strong>feel and connect</strong>, and how we <strong>think and reflect</strong>.
+        </p>
+        <p class="text-stone-600 leading-relaxed">
+            When any single stream dominates—pure productivity without heart, emotion without discernment, or intellect
+            without action—life feels fragmented. Here, we document experiments in diet, routine, mindset, and work to
+            bring all three into alignment.
+        </p>
+    </div>
+</section>
+
+<!-- Interactive Three Streams Explorer -->
+<section id="streams" class="py-20 px-6 border-b border-stone-200/60">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-serif text-3xl font-bold text-stone-900 mb-3">The Three Streams in Practice</h2>
+            <p class="text-stone-600">Select a stream to see how it translates into daily habits.</p>
+        </div>
+
+        <!-- Stream Tabs -->
+        <div class="flex justify-center gap-3 mb-10">
+            <button onclick="switchStream('karma')" id="tab-karma"
+                class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-900 text-stone-50 transition-all">
+                1. Karma (Action)
+            </button>
+            <button onclick="switchStream('bhakti')" id="tab-bhakti"
+                class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-200/70 text-stone-700 hover:bg-stone-200 transition-all">
+                2. Bhakti (Presence)
+            </button>
+            <button onclick="switchStream('jnana')" id="tab-jnana"
+                class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-200/70 text-stone-700 hover:bg-stone-200 transition-all">
+                3. Jnana (Clarity)
+            </button>
+        </div>
+
+        <!-- Dynamic Stream Card -->
+        <div id="stream-display" class="bg-white border border-stone-200/80 rounded-3xl p-8 md:p-12 shadow-sm">
+            <!-- Populated by JS below -->
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Jekyll Blog / Journal Section -->
+<section id="journal" class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-amber-800 font-semibold block mb-2">Notes &
+                    Experiments</span>
+                <h2 class="font-serif text-3xl font-bold text-stone-900">The Triveni Journal</h2>
+            </div>
+
+            <!-- Stream Filter Buttons -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterPosts('all')"
+                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-stone-50">All</button>
+                <button onclick="filterPosts('Karma')"
+                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Karma</button>
+                <button onclick="filterPosts('Bhakti')"
+                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Bhakti</button>
+                <button onclick="filterPosts('Jnana')"
+                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Jnana</button>
+            </div>
+        </div>
+
+        <!-- Jekyll Loop: Automatically renders every .md file in your _posts folder -->
+        <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for post in site.posts %}
+            <article data-stream="{{ post.stream }}"
+                class="post-card group border border-stone-200/80 rounded-2xl p-7 hover:border-amber-700/50 transition-all bg-stone-50/40 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between text-xs text-stone-500 mb-4">
+                        <span class="font-semibold uppercase tracking-wider text-amber-800">
+                            {{ post.stream | default: "Reflection" }}
+                        </span>
+                        <span>{{ post.date | date: "%b %d, %Y" }}</span>
+                    </div>
+                    <h3
+                        class="font-serif text-xl font-bold text-stone-900 mb-3 group-hover:text-amber-800 transition-colors">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-6">
+                        {{ post.excerpt | strip_html | truncate: 150 }}
+                    </p>
+                </div>
+                <a href="{{ post.url | relative_url }}"
+                    class="text-xs font-semibold uppercase tracking-wider text-stone-900 group-hover:text-amber-800 transition-colors inline-flex items-center gap-1">
+                    Read Entry &rarr;
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if site.posts.size == 0 %}
+        <p class="text-center text-stone-500 py-12">No journal entries yet. Add a Markdown file to <code>_posts/</code>
+            to publish your first article.</p>
+        {% endif %}
+    </div>
+</section>
+
+<script>
+    const streamsData = {
+        karma: {
+            title: "Karma Yoga: Intentional Execution",
+            subtitle: "Hands & Effort",
+            description: "Focusing completely on the quality of our daily actions—work, physical movement, and discipline—while releasing anxiety over outcomes we cannot control.",
+            examples: ["Deep, distraction-free work blocks", "Consistent physical training & mobility", "Preparing clean, whole-food meals with care"]
+        },
+        bhakti: {
+            title: "Bhakti Yoga: Grounded Presence",
+            subtitle: "Heart & Connection",
+            description: "Cultivating gratitude, emotional warmth, and reverence for everyday moments so life feels nourishing rather than mechanical.",
+            examples: ["Eating meals slowly without screens", "Practicing genuine listening in conversations", "Daily gratitude and appreciation rituals"]
+        },
+        jnana: {
+            title: "Jnana Yoga: Self-Inquiry & Clarity",
+            subtitle: "Mind & Discernment",
+            description: "Observing our habits, beliefs, and reactions objectively so we live by conscious design rather than autopilot.",
+            examples: ["Evening journaling and habit audits", "Reading philosophy and questioning assumptions", "Digital minimalism and quiet reflection"]
+        }
+    };
+
+    function switchStream(key) {
+        const data = streamsData[key];
+        document.getElementById('stream-display').innerHTML = `
+            <span class="text-xs uppercase tracking-widest text-amber-800 font-semibold">${data.subtitle}</span>
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-900 mt-1 mb-4">${data.title}</h3>
+            <p class="text-stone-600 leading-relaxed mb-6 max-w-2xl">${data.description}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-stone-100">
+                ${data.examples.map(ex => `
+                    <div class="bg-stone-50 rounded-xl p-4 text-sm text-stone-700 font-medium">
+                        &bull; ${ex}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+
+        document.querySelectorAll('.stream-tab').forEach(btn => {
+            btn.classList.remove('bg-stone-900', 'text-stone-50');
+            btn.classList.add('bg-stone-200/70', 'text-stone-700');
+        });
+        const activeBtn = document.getElementById('tab-' + key);
+        activeBtn.classList.remove('bg-stone-200/70', 'text-stone-700');
+        activeBtn.classList.add('bg-stone-900', 'text-stone-50');
+    }
+
+    function filterPosts(stream) {
+        document.querySelectorAll('.post-card').forEach(card => {
+            if (stream === 'all' || card.dataset.stream === stream) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Initialize default tab on load
+    switchStream('karma');
+</script>

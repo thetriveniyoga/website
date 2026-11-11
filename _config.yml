@@ -1,0 +1,10 @@
+title: Triveni Yoga
+description: Integrating Karma, Bhakti, and Jnana into daily life architecture.
+baseurl: "" # leave empty for root domain or name of repository if subpath
+url: "https://yourusername.github.io"
+
+permalink: /blog/:title/
+
+# Exclude unneeded files from build
+exclude:
+  - README.md

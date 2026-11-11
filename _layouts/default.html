@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<article class="max-w-3xl mx-auto px-6 py-16">
+    <!-- Metadata Header -->
+    <div class="mb-8 flex items-center gap-3">
+        {% if page.stream %}
+        <span
+            class="text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800">
+            {{ page.stream }} Stream
+        </span>
+        {% endif %}
+        <span class="text-xs text-stone-500">{{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+
+    <!-- Post Title -->
+    <h1 class="font-serif text-3xl md:text-5xl font-bold text-stone-900 mb-6 leading-tight">
+        {{ page.title }}
+    </h1>
+
+    <!-- Optional Excerpt -->
+    {% if page.excerpt %}
+    <p class="text-lg text-stone-600 leading-relaxed mb-8 italic border-l-2 border-amber-600 pl-4">
+        {{ page.excerpt }}
+    </p>
+    {% endif %}
+
+    <!-- Your Clean Markdown Content Gets Injected Here -->
+    <div
+        class="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-stone-900 [&_h2]:pt-6 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:pt-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2 [&_blockquote]:border-l-2 [&_blockquote]:border-stone-300 [&_blockquote]:pl-4 [&_blockquote]:italic">
+        {{ content }}
+    </div>
+
+    <!-- Back to Home Link -->
+    <div class="mt-16 pt-8 border-t border-stone-200">
+        <a href="{{ site.baseurl }}/#journal"
+            class="text-sm font-medium text-amber-800 hover:text-amber-950 transition-colors">
+            &larr; Back to all journal entries
+        </a>
+    </div>
+</article>
