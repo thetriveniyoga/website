@@ -1,42 +1,43 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<article class="max-w-3xl mx-auto px-6 py-16">
-    <!-- Metadata Header -->
-    <div class="mb-8 flex items-center gap-3">
-        {% if page.stream %}
-        <span
-            class="text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800">
-            {{ page.stream }} Stream
-        </span>
-        {% endif %}
-        <span class="text-xs text-stone-500">{{ page.date | date: "%B %d, %Y" }}</span>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <!-- Post Title -->
-    <h1 class="font-serif text-3xl md:text-5xl font-bold text-stone-900 mb-6 leading-tight">
-        {{ page.title }}
-    </h1>
+<body class="bg-stone-50 text-stone-800 antialiased font-sans min-h-screen flex flex-col">
 
-    <!-- Optional Excerpt -->
-    {% if page.excerpt %}
-    <p class="text-lg text-stone-600 leading-relaxed mb-8 italic border-l-2 border-amber-600 pl-4">
-        {{ page.excerpt }}
-    </p>
-    {% endif %}
+    <!-- Header / Navigation -->
+    <header class="border-b border-stone-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ '/' | relative_url }}"
+                class="font-medium tracking-tight text-stone-900 hover:text-stone-600 transition-colors">
+                Triveni Yoga
+            </a>
+            <nav class="flex items-center gap-6 text-sm text-stone-600">
+                <a href="{{ '/' | relative_url }}" class="hover:text-stone-900 transition-colors">Home</a>
+                <a href="{{ '/' | relative_url }}#journal" class="hover:text-stone-900 transition-colors">Journal</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Your Clean Markdown Content Gets Injected Here -->
-    <div
-        class="space-y-6 text-stone-700 leading-relaxed text-base md:text-lg [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-stone-900 [&_h2]:pt-6 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-stone-900 [&_h3]:pt-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2 [&_blockquote]:border-l-2 [&_blockquote]:border-stone-300 [&_blockquote]:pl-4 [&_blockquote]:italic">
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-12 w-full">
         {{ content }}
-    </div>
+    </main>
 
-    <!-- Back to Home Link -->
-    <div class="mt-16 pt-8 border-t border-stone-200">
-        <a href="{{ site.baseurl }}/#journal"
-            class="text-sm font-medium text-amber-800 hover:text-amber-950 transition-colors">
-            &larr; Back to all journal entries
-        </a>
-    </div>
-</article>
+    <!-- Footer -->
+    <footer class="border-t border-stone-200 bg-white py-8 text-center text-xs text-stone-500">
+        <div class="max-w-3xl mx-auto px-6">
+            <p>© {{ site.time | date: "%Y" }} Triveni Yoga. Exploring Karma, Bhakti, and Jnana in daily life.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
