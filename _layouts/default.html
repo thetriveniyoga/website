@@ -17,7 +17,7 @@
         <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ '/' | relative_url }}"
                 class="font-medium tracking-tight text-stone-900 hover:text-stone-600 transition-colors">
-                Triveni Yoga
+                The Triveni Yoga
             </a>
             <nav class="flex items-center gap-6 text-sm text-stone-600">
                 <a href="{{ '/' | relative_url }}" class="hover:text-stone-900 transition-colors">Home</a>
@@ -32,9 +32,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-stone-200 bg-white py-8 text-center text-xs text-stone-500">
-        <div class="max-w-3xl mx-auto px-6">
-            <p>© {{ site.time | date: "%Y" }} Triveni Yoga. Exploring Karma, Bhakti, and Jnana in daily life.</p>
+    <footer class="border-t border-stone-200 bg-white py-8 text-stone-500 text-sm">
+        <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© {{ site.time | date: "%Y" }} The Triveni Yoga. Exploring Karma, Gyan, and Bhakti in daily life.</p>
+            <!-- Social Media Links -->
+            <div class="flex items-center gap-5 text-xs font-medium uppercase tracking-wider text-stone-600">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-stone-950 transition-colors">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-stone-950 transition-colors">Facebook</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-stone-950 transition-colors">YouTube</a>
+            </div>
         </div>
     </footer>
 

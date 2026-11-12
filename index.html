@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Triveni Yoga — Daily Life Philosophy
+title: The Triveni Yoga — Daily Life Philosophy
 ---
 
 <!-- Hero Section -->
@@ -22,7 +22,7 @@ title: Triveni Yoga — Daily Life Philosophy
             Where three streams meet in everyday life.
         </h1>
         <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed mb-10">
-            Not a physical exercise routine—a practical architecture for living. Exploring how Karma, Bhakti, and Jnana
+            A practical architecture for living. Exploring how Karma, Gyan, and Bhakti
             merge into better habits, mindful nutrition, and intentional work.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
@@ -45,10 +45,10 @@ title: Triveni Yoga — Daily Life Philosophy
         <p class="text-stone-600 leading-relaxed text-lg mb-6">
             <em>Triveni</em> refers to the confluence of three rivers. In daily life, a balanced human experience
             requires integrating three distinct modes of operating: how we <strong>act</strong> in the world, how we
-            <strong>feel and connect</strong>, and how we <strong>think and reflect</strong>.
+            <strong>reflect and understand</strong>, and how we <strong>feel and connect</strong>.
         </p>
         <p class="text-stone-600 leading-relaxed">
-            When any single stream dominates—pure productivity without heart, emotion without discernment, or intellect
+            When any single stream dominates—pure productivity without reflection, intellect without heart, or emotion
             without action—life feels fragmented. Here, we document experiments in diet, routine, mindset, and work to
             bring all three into alignment.
         </p>
@@ -69,13 +69,13 @@ title: Triveni Yoga — Daily Life Philosophy
                 class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-900 text-stone-50 transition-all">
                 1. Karma (Action)
             </button>
+            <button onclick="switchStream('gyan')" id="tab-gyan"
+                class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-200/70 text-stone-700 hover:bg-stone-200 transition-all">
+                2. Gyan (Clarity)
+            </button>
             <button onclick="switchStream('bhakti')" id="tab-bhakti"
                 class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-200/70 text-stone-700 hover:bg-stone-200 transition-all">
-                2. Bhakti (Presence)
-            </button>
-            <button onclick="switchStream('jnana')" id="tab-jnana"
-                class="stream-tab px-5 py-2.5 rounded-full text-sm font-medium bg-stone-200/70 text-stone-700 hover:bg-stone-200 transition-all">
-                3. Jnana (Clarity)
+                3. Bhakti (Presence)
             </button>
         </div>
 
@@ -102,10 +102,10 @@ title: Triveni Yoga — Daily Life Philosophy
                     class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-900 text-stone-50">All</button>
                 <button onclick="filterPosts('Karma')"
                     class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Karma</button>
+                <button onclick="filterPosts('Gyan')"
+                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Gyan</button>
                 <button onclick="filterPosts('Bhakti')"
                     class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Bhakti</button>
-                <button onclick="filterPosts('Jnana')"
-                    class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-stone-100 text-stone-600 hover:bg-stone-200">Jnana</button>
             </div>
         </div>
 
@@ -115,10 +115,7 @@ title: Triveni Yoga — Daily Life Philosophy
             <article data-stream="{{ post.stream }}"
                 class="post-card group border border-stone-200/80 rounded-2xl p-7 hover:border-amber-700/50 transition-all bg-stone-50/40 flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center justify-between text-xs text-stone-500 mb-4">
-                        <span class="font-semibold uppercase tracking-wider text-amber-800">
-                            {{ post.stream | default: "Reflection" }}
-                        </span>
+                    <div class="text-xs text-stone-400 mb-4">
                         <span>{{ post.date | date: "%b %d, %Y" }}</span>
                     </div>
                     <h3
@@ -152,17 +149,17 @@ title: Triveni Yoga — Daily Life Philosophy
             description: "Focusing completely on the quality of our daily actions—work, physical movement, and discipline—while releasing anxiety over outcomes we cannot control.",
             examples: ["Deep, distraction-free work blocks", "Consistent physical training & mobility", "Preparing clean, whole-food meals with care"]
         },
+        gyan: {
+            title: "Gyan Yoga: Self-Inquiry & Clarity",
+            subtitle: "Mind & Discernment",
+            description: "Observing our habits, beliefs, and reactions objectively so we live by conscious design rather than autopilot.",
+            examples: ["Evening journaling and habit audits", "Reading philosophy and questioning assumptions", "Digital minimalism and quiet reflection"]
+        },
         bhakti: {
             title: "Bhakti Yoga: Grounded Presence",
             subtitle: "Heart & Connection",
             description: "Cultivating gratitude, emotional warmth, and reverence for everyday moments so life feels nourishing rather than mechanical.",
             examples: ["Eating meals slowly without screens", "Practicing genuine listening in conversations", "Daily gratitude and appreciation rituals"]
-        },
-        jnana: {
-            title: "Jnana Yoga: Self-Inquiry & Clarity",
-            subtitle: "Mind & Discernment",
-            description: "Observing our habits, beliefs, and reactions objectively so we live by conscious design rather than autopilot.",
-            examples: ["Evening journaling and habit audits", "Reading philosophy and questioning assumptions", "Digital minimalism and quiet reflection"]
         }
     };
 
